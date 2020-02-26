@@ -34,7 +34,7 @@ func ReadEnvVar(name string, defaultValue string) string {
 func main() {
         port := configuredPort()
         dir := configuredDir()
-        log.Println("static-server serving directory: ", dir, " on port: " port)
+        log.Println("static-server serving directory: ", dir, " on port: ", port)
         err := http.ListenAndServe(port, http.FileServer(neuteredFileSystem{http.Dir(dir)}))
         log.Fatal(err)
 }
