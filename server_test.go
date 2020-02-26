@@ -19,7 +19,7 @@ func TestReadEnvVarReturnsDefaultValueWhenEnvVarNotSet(t *testing.T) {
 }
 
 func TestReadEnvVarReturnsTheExpectedValueWhenSet(t *testing.T) {
-        os.SetEnv(envVar, expectedValue)
+        os.Setenv(envVar, expectedValue)
         res := ReadEnvVar(envVar, defaultValue)
 	if res != expectedValue {
                 t.Errorf("Did not return the expected value set in the enviroinment variable")
